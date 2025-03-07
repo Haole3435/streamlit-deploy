@@ -1,6 +1,4 @@
 ## ML Model Deployment at Streamlit Server
-# Full Streamlit Code Repository: https://github.com/laxmimerit/streamlit-tutorials
-
 # streamlit run 2-app.py
 
 import streamlit as st
@@ -9,17 +7,17 @@ import torch
 from transformers import pipeline
 
 import boto3
-bucket_name = "ml-models-3435"
+bucket_name = "ml-model-f57293c4"
 #bucket_name: Tên của S3 bucket chứa mô hình.
 
 
-local_path = 'tinybert-sentiment-analysis'
+local_path = 'tinybert-sentiment-analysis1'
 #local_path: Đường dẫn thư mục lưu mô hình sau khi tải về.
 
-s3_prefix = 'ml-models/tinybert-sentiment-analysis/'
+s3_prefix = 'ml-deploy/tinybert-sentiment-analysis/'
 #s3_prefix: Đường dẫn thư mục trong S3 nơi mô hình được lưu.
 
-s3 = boto3.client('s3')
+s3 = boto3.client('s3', region_name='ap-southeast-2')
 #s3 = boto3.client('s3'): Tạo một client để kết nối với S3.
 
 def download_dir(local_path, s3_prefix):
