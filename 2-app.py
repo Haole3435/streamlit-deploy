@@ -7,7 +7,7 @@ import torch
 from transformers import pipeline
 
 import boto3
-bucket_name = "ml-model-f57293c4"
+bucket_name = "ml-model-78ffafb0"
 #bucket_name: Tên của S3 bucket chứa mô hình.
 
 
